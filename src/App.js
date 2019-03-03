@@ -45,6 +45,12 @@ export class App extends Component {
     }).catch(() => this.setState({ failed: true }))
   }
 
+  handleKeyPress = () => {
+    if (event.key == 'Enter'){
+      this.handleClick();
+    }
+  }
+
 
   render() {
     return (
@@ -52,7 +58,8 @@ export class App extends Component {
         <Reset />
         <Wrapper>
           <Input type="text" placeholder="https://www.twitch.tv/truefaust/clip/HyperBoringPigCmonBruh" 
-                 value={this.state.curLink} onChange={this.handleChange} />
+                 value={this.state.curLink} onChange={this.handleChange} 
+                 onKeyPress={this.handleKeyPress} />
 
           <Button onClick={this.handleClick}>Get download link</Button>
 
