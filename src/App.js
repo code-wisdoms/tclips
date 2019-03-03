@@ -19,7 +19,7 @@ export class App extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({curLink: event.target.value});
+    this.setState({ curLink: event.target.value });
   }
 
   handleClick = () => {
@@ -46,7 +46,7 @@ export class App extends Component {
   }
 
   handleKeyPress = () => {
-    if (event.key == 'Enter'){
+    if (event.key === 'Enter'){
       this.handleClick();
     }
   }
