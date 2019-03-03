@@ -5,7 +5,7 @@
 ### Quick Start
 Copy repo:
 ```bash
-git clone https://gitlab.com/moondef/tclips.git && cd tclips
+git clone https://github.com/moondef/tclips.git && cd tclips
 ```
 
 Install deps:
