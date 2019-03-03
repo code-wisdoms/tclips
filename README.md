@@ -3,7 +3,7 @@
 [https://tclips.netlify.com/](https://tclips.netlify.com/)
 
 ### Quick Start
-Copy repos:
+Copy repo:
 ```bash
 git clone https://gitlab.com/moondef/tclips.git && cd tclips
 ```
