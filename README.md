@@ -1,12 +1,20 @@
-# parcel-react-starter
+# tclips
 
-## Getting started
+[https://tclips.netlify.com/](https://tclips.netlify.com/)
 
-Clone and install deps
-
+### Quick Start
+Copy repos:
+```bash
+git clone https://gitlab.com/moondef/tclips.git && cd tclips
 ```
-git clone https://github.com/moondef/parcel-react-starter my-app
-cd my-app
+
+Install deps:
+```bash
 yarn
-yarn start
 ```
+
+#### Scripts
+|`yarn <script>`    |Описание|
+|-------------------|-----------|
+|`run`            |Run app on `localhost:1234`|
+|`build`            |Build app to ./dist|
