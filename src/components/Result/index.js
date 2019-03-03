@@ -34,6 +34,10 @@ const Broadcaster = styled.span`
 const Preview = styled.img`
   width: 480px;
   margin-bottom: 11px;
+
+  @media screen and (max-width: 550px) {
+    width: 100%;
+  }
 `;
 
 const Download = styled.a`
