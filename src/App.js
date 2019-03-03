@@ -7,6 +7,7 @@ import { Wrapper } from './components/Wrapper';
 import { Input } from './components/Input';
 import { Button } from './components/Button';
 import { Result } from './components/Result';
+import { ErrorMessage } from './components/ErrorMessage';
 
 export class App extends Component {
   constructor(props) {
@@ -36,11 +37,12 @@ export class App extends Component {
           title: res.data.title,
           broadcaster: res.data.broadcaster.name,
           preview: res.data.thumbnails.medium,
-          download_link: res.data.thumbnails.medium.replace('-preview-480x272.jpg', '.mp4')
-        }
+          download_link: res.data.thumbnails.medium.replace('-preview-480x272.jpg', '.mp4'),
+        },
+        failed: false
       })     
 
-    })
+    }).catch(() => this.setState({ failed: true }))
   }
 
 
@@ -54,7 +56,8 @@ export class App extends Component {
 
           <Button onClick={this.handleClick}>Get download link</Button>
 
-          { this.state.clipData.title && <Result {...this.state.clipData} /> }
+          { this.state.clipData.title && !this.state.failed && <Result {...this.state.clipData} /> }
+          { this.state.failed && <ErrorMessage /> }
 
         </Wrapper>
       </React.Fragment>
