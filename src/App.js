@@ -18,7 +18,7 @@ export class App extends Component {
     }
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({ curLink: event.target.value });
   }
 
@@ -42,15 +42,14 @@ export class App extends Component {
         failed: false
       });     
 
-    }).catch(() => this.setState({ failed: true }))
+    }).catch(() => this.setState({ failed: true }));
   }
 
   handleKeyPress = () => {
-    if (event.key === 'Enter'){
+    if (event.key === 'Enter') {
       this.handleClick();
     }
   }
-
 
   render() {
     return (
@@ -68,8 +67,6 @@ export class App extends Component {
 
         </Wrapper>
       </React.Fragment>
-    )
+    );
   }
 }
-
-
