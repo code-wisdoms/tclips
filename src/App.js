@@ -23,8 +23,8 @@ export class App extends Component {
   }
 
   handleClick = () => {
-    const urlArr = this.state.curLink.split('/');
-    const slug = urlArr[urlArr.length - 1]
+    const urlArr = this.state.curLink.split('/').filter(e => Boolean(e));
+    const slug = urlArr[urlArr.length - 1];
 
     axios.get(`https://api.twitch.tv/kraken/clips/${slug}`, {
       'headers': {
@@ -40,7 +40,7 @@ export class App extends Component {
           download_link: res.data.thumbnails.medium.replace('-preview-480x272.jpg', '.mp4'),
         },
         failed: false
-      })     
+      });     
 
     }).catch(() => this.setState({ failed: true }))
   }
