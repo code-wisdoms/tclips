@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Reset } from 'styled-reset';
+import Clipboard from 'clipboard';
 
 import { Wrapper } from './components/Wrapper';
 import { Input } from './components/Input';
@@ -16,6 +17,10 @@ export class App extends Component {
       curLink: '',
       clipData: {}
     }
+  }
+
+  componentDidMount() {
+    const clipboard = new Clipboard('.copy');
   }
 
   handleChange = event => {
